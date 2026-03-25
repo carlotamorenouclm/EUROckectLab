@@ -1,0 +1,69 @@
+body { 
+    font-family: 'Montserrat', sans-serif; 
+    background-color: #0c1a3c; 
+    color: #f8fafc; 
+    background-image: 
+        radial-gradient(circle at 15% 50%, rgba(231, 76, 60, 0.05), transparent 25%),
+        radial-gradient(circle at 85% 30%, rgba(241, 196, 15, 0.05), transparent 25%);
+}
+
+.font-mono { 
+    font-family: 'JetBrains Mono', monospace; 
+}
+
+:root {
+    --red-erasmus: #e74c3c; 
+    --yellow-erasmus: #f1c40f; 
+    --blue-erasmus: #3498db; 
+    --green-erasmus: #2ecc71; 
+}
+
+/* Couleurs sur mesure */
+.text-red-erasmus { color: var(--red-erasmus); }
+.text-yellow-erasmus { color: var(--yellow-erasmus); }
+.text-blue-erasmus { color: var(--blue-erasmus); }
+.text-green-erasmus { color: var(--green-erasmus); }
+
+.bg-red-erasmus { background-color: var(--red-erasmus); }
+.bg-yellow-erasmus { background-color: var(--yellow-erasmus); }
+.bg-blue-erasmus { background-color: var(--blue-erasmus); }
+.bg-green-erasmus { background-color: var(--green-erasmus); }
+
+.border-t-red-erasmus { border-color: var(--red-erasmus); }
+.border-t-yellow-erasmus { border-color: var(--yellow-erasmus); }
+.border-t-blue-erasmus { border-color: var(--blue-erasmus); }
+.border-t-green-erasmus { border-color: var(--green-erasmus); }
+
+.border-l-blue-erasmus { border-color: var(--blue-erasmus); }
+.border-r-yellow-erasmus { border-color: var(--yellow-erasmus); }
+
+/* Effet de verre (Glassmorphism) */
+.glass-panel { 
+    background: rgba(15, 23, 42, 0.65); 
+    backdrop-filter: blur(14px); 
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(148, 163, 184, 0.1); 
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.6), 0 4px 6px -2px rgba(0, 0, 0, 0.5);
+}
+
+#serialConsole::-webkit-scrollbar { width: 8px; }
+#serialConsole::-webkit-scrollbar-track { background: transparent; }
+#serialConsole::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+#serialConsole::-webkit-scrollbar-thumb:hover { background: #475569; }
+
+/* Dark Mode Leaflet */
+.leaflet-layer, .leaflet-control-zoom-in, .leaflet-control-zoom-out, .leaflet-control-attribution {
+  filter: invert(100%) hue-rotate(180deg) brightness(90%) contrast(90%);
+}
+.leaflet-container { background-color: transparent !important; }
+
+/* Animations de la Phase de vol (Machine à états) */
+.phase-idle { background-color: rgba(30, 41, 59, 0.8) !important; border-bottom-color: #64748b !important; }
+.phase-launch { background-color: rgba(231, 76, 60, 0.2) !important; border-bottom-color: var(--red-erasmus) !important; text-shadow: 0 0 10px rgba(231,76,60,0.8); }
+.phase-coast { background-color: rgba(52, 152, 219, 0.2) !important; border-bottom-color: var(--blue-erasmus) !important; text-shadow: 0 0 10px rgba(52,152,219,0.8); }
+.phase-apogee { background-color: rgba(241, 196, 15, 0.2) !important; border-bottom-color: var(--yellow-erasmus) !important; text-shadow: 0 0 10px rgba(241,196,15,0.8); }
+.phase-descent { background-color: rgba(46, 204, 113, 0.2) !important; border-bottom-color: var(--green-erasmus) !important; }
+
+/* Animation flash au lancement */
+@keyframes pulseRed { 0% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.7); } 70% { box-shadow: 0 0 0 20px rgba(231, 76, 60, 0); } 100% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0); } }
+.animate-launch { animation: pulseRed 2s infinite; }

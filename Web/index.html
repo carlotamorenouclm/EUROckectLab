@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celestial Horizons BIP 2026 - Erasmus+</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="min-h-screen p-4 flex flex-col items-center">
+
+    <header class="w-full max-w-7xl flex flex-col md:flex-row justify-between items-center gap-6 mb-4 mt-2 glass-panel p-6 rounded-2xl border-t-2 border-t-cyan-500 shadow-[0_0_30px_rgba(6,182,212,0.15)]">
+        
+        <div class="flex items-center gap-5">
+            <div class="relative w-24 h-24 rounded-full p-1 border-2 border-cyan-500 shadow-[0_0_20px_rgba(6,182,212,0.4)] bg-[#0a1128] flex items-center justify-center overflow-hidden">
+                <img src="logo.png" alt="Logo Celestial Horizons" class="w-full h-full object-contain rounded-full">
+            </div>
+            <div>
+                <h1 class="text-3xl font-extrabold tracking-tight text-white uppercase drop-shadow-lg">
+                    CELESTIAL HORIZONS <span class="text-cyan-400 font-light">BIP 26</span>
+                </h1>
+                <p class="text-slate-300 text-sm mt-1 uppercase tracking-widest font-semibold" data-i18n="subtitle">Mission Control Center</p>
+            </div>
+        </div>
+        
+        <div class="flex flex-wrap justify-center sm:flex-row items-center gap-4">
+            
+            <button id="audioBtn" class="group relative w-20 h-20 rounded-full bg-[#0a1128] border-2 border-cyan-500 flex flex-col items-center justify-center shadow-[0_0_15px_rgba(6,182,212,0.4)] hover:shadow-[0_0_25px_rgba(6,182,212,0.8)] transition-all duration-300">
+                <div class="absolute inset-1 rounded-full border border-slate-700/50 pointer-events-none"></div>
+                <i class="fa-solid fa-volume-xmark text-2xl text-cyan-400 mb-1 transition-colors" id="audioIcon"></i>
+                <span class="text-[9px] font-bold text-slate-300 uppercase tracking-widest" data-i18n="audioEnable">Audio</span>
+            </button>
+
+            <div class="relative w-20 h-20 rounded-full bg-[#0a1128] border-2 border-blue-500 flex flex-col items-center justify-center shadow-[0_0_15px_rgba(59,130,246,0.4)] hover:shadow-[0_0_25px_rgba(59,130,246,0.8)] transition-all duration-300 overflow-hidden cursor-pointer group">
+                <div class="absolute inset-1 rounded-full border border-slate-700/50 pointer-events-none"></div>
+                <i class="fa-solid fa-globe text-2xl text-blue-400 mb-1 group-hover:scale-110 transition-transform"></i>
+                <span class="text-[11px] font-black text-white uppercase tracking-widest" id="langDisplay">FR</span>
+                <select id="langSelector" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
+                    <option value="fr">FR</option>
+                    <option value="en">EN</option>
+                    <option value="es">ES</option>
+                    <option value="lu">LU</option>
+                </select>
+            </div>
+            
+            <button id="exportBtn" class="hidden group relative w-20 h-20 rounded-full bg-[#0a1128] border-2 border-green-500 flex flex-col items-center justify-center shadow-[0_0_15px_rgba(34,197,94,0.4)] hover:shadow-[0_0_25px_rgba(34,197,94,0.8)] transition-all duration-300">
+                <div class="absolute inset-1 rounded-full border border-slate-700/50 pointer-events-none"></div>
+                <i class="fa-solid fa-download text-2xl text-green-400 mb-1 group-hover:translate-y-1 transition-transform"></i>
+                <span class="text-[10px] font-bold text-slate-300 uppercase tracking-widest" data-i18n="csvDownload">CSV</span>
+            </button>
+
+            <button id="connectBtn" class="group relative w-24 h-24 rounded-full bg-[#0a1128] border-2 border-orange-500 flex flex-col items-center justify-center shadow-[0_0_20px_rgba(249,115,22,0.5)] hover:shadow-[0_0_35px_rgba(249,115,22,0.9)] transition-all duration-300">
+                <div class="absolute inset-1 rounded-full border border-orange-900/50 pointer-events-none"></div>
+                <i class="fa-brands fa-usb text-3xl text-orange-400 mb-1 group-hover:scale-110 transition-transform" id="usbIcon"></i>
+                <span id="btnText" class="text-[9px] font-black text-white uppercase tracking-widest text-center leading-tight px-2" data-i18n="connect">Connecter<br>USB</span>
+            </button>
+
+        </div>
+    </header>
+
+    <section class="w-full max-w-7xl grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+        <div class="glass-panel p-4 rounded-xl flex items-center justify-between border-l-4 border-l-blue-erasmus">
+            <div>
+                <p class="text-xs uppercase font-bold text-slate-400 tracking-wider" data-i18n="speedTitle">Vitesse Verticale</p>
+                <p class="text-2xl font-mono font-bold text-white mt-1"><span id="valSpeed">0.0</span> <span class="text-sm text-blue-erasmus">m/s</span></p>
+            </div>
+            <i class="fa-solid fa-gauge-simple-high text-3xl text-slate-700"></i>
+        </div>
+        <div id="flightPhaseBox" class="glass-panel p-4 rounded-xl flex flex-col items-center justify-center border-b-4 border-b-slate-500 bg-slate-800/80 transition-all duration-500 text-center">
+            <p class="text-[10px] uppercase font-bold text-slate-400 tracking-widest mb-1" data-i18n="phaseTitle">Phase de vol</p>
+            <h2 id="valPhase" class="text-xl font-black text-slate-300 uppercase tracking-widest" data-i18n="phaseIdle">SUR LE PAS DE TIR</h2>
+        </div>
+        <div class="glass-panel p-4 rounded-xl flex items-center justify-between border-r-4 border-r-yellow-erasmus">
+            <div class="text-right w-full">
+                <p class="text-xs uppercase font-bold text-slate-400 tracking-wider" data-i18n="apogeeTitle">Apogée (Max Alt)</p>
+                <p class="text-2xl font-mono font-bold text-yellow-erasmus mt-1 drop-shadow-[0_0_8px_rgba(241,196,15,0.5)]"><span id="valApogee">0.0</span> <span class="text-sm text-white">m</span></p>
+            </div>
+        </div>
+    </section>
+
+    <main class="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+        <div class="glass-panel p-4 rounded-2xl col-span-1 md:col-span-2 row-span-2 flex flex-col border border-slate-700 relative overflow-hidden">
+            <h2 class="text-lg font-semibold text-white mb-2 flex items-center gap-2 z-20 relative"><i class="fa-solid fa-map-location-dot text-blue-erasmus"></i> <span data-i18n="mapTitle">Suivi de Vol GPS</span></h2>
+            <div id="map" class="w-full h-full min-h-[400px] rounded-lg border border-slate-700 z-10 absolute top-0 left-0 pt-12"></div>
+        </div>
+
+        <div class="glass-panel p-4 rounded-2xl flex flex-col border-t-2 border-t-blue-erasmus relative z-20">
+            <h2 class="text-sm font-semibold text-slate-300 mb-2 flex justify-between">
+                <span data-i18n="altTitle">Altitude (m)</span>
+                <span id="liveAlt" class="text-blue-erasmus font-mono font-bold">--</span>
+            </h2>
+            <div class="w-full h-[160px] relative"><canvas id="altChart"></canvas></div>
+        </div>
+
+        <div class="glass-panel p-4 rounded-2xl flex flex-col border-t-2 border-t-yellow-erasmus relative z-20">
+            <h2 class="text-sm font-semibold text-slate-300 mb-2 flex justify-between">
+                <span data-i18n="accelTitle">Accélération (G)</span>
+                <span id="liveAccel" class="text-yellow-erasmus font-mono font-bold">--</span>
+            </h2>
+            <div class="w-full h-[160px] relative"><canvas id="accelChart"></canvas></div>
+        </div>
+
+        <div class="glass-panel p-4 rounded-2xl flex flex-col border-t-2 border-t-red-erasmus relative z-20">
+            <h2 class="text-sm font-semibold text-slate-300 mb-2 flex justify-between">
+                <span data-i18n="tempTitle">Température (°C)</span>
+                <span id="liveTemp" class="text-red-erasmus font-mono font-bold">--</span>
+            </h2>
+            <div class="w-full h-[160px] relative"><canvas id="tempChart"></canvas></div>
+        </div>
+
+        <div class="glass-panel p-4 rounded-2xl flex flex-col border-t-2 border-t-green-erasmus relative z-20">
+            <h2 class="text-sm font-semibold text-slate-300 mb-2 flex justify-between">
+                <span data-i18n="pressTitle">Pression (hPa)</span>
+                <span id="livePress" class="text-green-erasmus font-mono font-bold">--</span>
+            </h2>
+            <div class="w-full h-[160px] relative"><canvas id="pressChart"></canvas></div>
+        </div>
+    </main>
+
+    <section class="w-full max-w-7xl glass-panel p-4 rounded-2xl border border-slate-700 mb-6 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/50 pointer-events-none"></div>
+        <h2 class="text-sm font-semibold text-slate-300 mb-2 flex items-center gap-2 relative z-10"><i class="fa-solid fa-terminal text-green-400"></i> <span data-i18n="terminalTitle">Données Brutes du Capteur (Serial Log)</span></h2>
+        <div id="serialConsole" class="p-4 h-[120px] overflow-y-auto font-mono text-xs text-green-400 bg-[#0a0f18]/80 backdrop-blur-sm rounded-lg relative z-10 border border-slate-800 shadow-inner"></div>
+    </section>
+
+    <footer class="w-full max-w-7xl glass-panel p-8 rounded-2xl border-t-4 border-t-red-erasmus mt-4 grid grid-cols-1 lg:grid-cols-3 gap-8 mb-10">
+        <div class="lg:col-span-2 flex flex-col gap-4">
+            <div class="flex items-center gap-4">
+                <i class="fa-solid fa-graduation-cap text-4xl text-yellow-erasmus"></i>
+                <h2 class="text-3xl font-extrabold text-white tracking-tight" data-i18n="erasmusTitle">À propos du Projet Erasmus+ BIP</h2>
+            </div>
+            <p class="text-slate-200 text-lg leading-relaxed" data-i18n="erasmusIntro">
+                Bienvenue sur la station sol du projet **EU Rocket Lab**, un programme Erasmus+ Blended Intensive Programme (BIP) 2026. Ce projet unique réunit des étudiants et des enseignants issus de plusieurs pays européens autour d'un défi d'ingénierie spatiale concret : concevoir, fabriquer et faire décoller une fusée expérimentale.
+            </p>
+            <p class="text-slate-300" data-i18n="erasmusContext">
+                Au-delà de l'acquisition de compétences techniques en électronique (IoT, LoRa), en programmation C++ (Arduino/ESP32) et en analyses de données barométriques et inertielles (BME280/MPU-9250), ce BIP favorise l'échange interculturel, la collaboration internationale et l'esprit critique. Il prépare la prochaine génération d'ingénieurs à travailler dans un environnement collaboratif européen.
+            </p>
+            <div class="flex gap-4 mt-2">
+                <span class="bg-blue-erasmus/20 text-blue-300 px-4 py-1.5 rounded-full text-sm font-semibold border border-blue-erasmus/30 shadow-sm">Toulouse, FR</span>
+                <span class="bg-red-erasmus/20 text-red-300 px-4 py-1.5 rounded-full text-sm font-semibold border border-red-erasmus/30 shadow-sm">Esch-sur-Alzette, LU</span>
+                <span class="bg-yellow-erasmus/20 text-yellow-100 px-4 py-1.5 rounded-full text-sm font-semibold border border-yellow-erasmus/30 shadow-sm">Gérone, ES</span>
+            </div>
+        </div>
+        
+        <div class="bg-slate-900/80 p-6 rounded-xl border border-slate-700 flex flex-col gap-4 shadow-xl">
+            <h3 class="text-xl font-bold text-white uppercase tracking-wider" data-i18n="timelineTitle">Timeline du Projet</h3>
+            <ul class="text-sm text-slate-300 space-y-5 relative list-none pl-5 mt-2">
+                <div class="absolute left-2.5 top-2 bottom-4 w-0.5 bg-slate-700"></div>
+                <li class="relative before:content-[''] before:absolute before:left-[-20px] before:top-1 before:w-4 before:h-4 before:bg-green-erasmus before:rounded-full before:border-2 before:border-white before:z-10"><strong class="text-white block mb-1">Février 2026</strong> Phase Virtuelle - Architecture logicielle et simulation.</li>
+                <li class="relative before:content-[''] before:absolute before:left-[-20px] before:top-1 before:w-4 before:h-4 before:bg-blue-erasmus before:rounded-full before:border-2 before:border-white before:z-10"><strong class="text-white block mb-1">Mars 2026</strong> Phase Physique à l'École - Fabrication et tests I2C.</li>
+                <li class="relative before:content-[''] before:absolute before:left-[-20px] before:top-1 before:w-4 before:h-4 before:bg-red-erasmus before:rounded-full before:border-2 before:border-white before:z-10"><strong class="text-white block mb-1 text-red-400">Vendredi Lancement !</strong> Vol inaugural de la fusée "Erasmus Star".</li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
