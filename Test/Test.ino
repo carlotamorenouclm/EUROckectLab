@@ -1,56 +1,37 @@
-/*
-  CELESTIAL HORIZONS - TEST 1
-  Scanner I2C pour verifier le branchement du BME280
-*/
-
 #include <Wire.h>
+#include <Adafruit_Sensor.h>
+#include <Adafruit_BME280.h>
 
-// Broches de la Heltec V4
-#define SDA_PIN 17
-#define SCL_PIN 18
+TwoWire I2CBME = TwoWire(0);
+Adafruit_BME280 bme;
 
 void setup() {
   Serial.begin(115200);
-  delay(2000); // Laisse le temps d'ouvrir le moniteur série
+  delay(3000);
+  Serial.println("Début");
 
-  Serial.println("\n--- CELESTIAL HORIZONS ---");
-  Serial.println("Initialisation du Radar I2C sur les broches 17(SDA) et 18(SCL)...");
+  I2CBME.begin(43, 44);
 
-  Wire.begin(SDA_PIN, SCL_PIN);
-}
-
-void loop() {
-  byte error, address;
-  int nDevices = 0;
-
-  Serial.println("Scan du bus I2C en cours...");
-
-  for(address = 1; address < 127; address++ ) {
-    Wire.beginTransmission(address);
-    error = Wire.endTransmission();
-
-    if (error == 0) {
-      Serial.print("SUCCESS : Capteur trouve a l'adresse hexadecimale 0x");
-      if (address < 16) { Serial.print("0"); }
-      Serial.print(address, HEX);
-
-      // Verification specifique pour le BME280
-      if (address == 0x76 || address == 0x77) {
-        Serial.println("  >>> BINGO ! C'est ton BME280 ! Le cablage est parfait !");
-      } else if (address == 0x3C) {
-        Serial.println("  (C'est l'ecran de la Heltec, c'est normal)");
-      } else {
-        Serial.println("  (Composant inconnu)");
-      }
-      nDevices++;
+  if (!bme.begin(0x77, &I2CBME)) {
+    Serial.println("BME280 non detecte");
+    while (1) {
+      Serial.println("attente...");
+      delay(1000);
     }
   }
 
-  if (nDevices == 0) {
-    Serial.println("ERREUR : Rien trouve. Verifie tes 4 fils (3V3, GND, Bleu sur 17, Vert sur 18)");
-  } else {
-    Serial.println("Scan termine.\n");
-  }
+  Serial.println("BME280 detecte");
+}
 
-  delay(5000);
+void loop() {
+  Serial.print("Temperature: ");
+  Serial.print(bme.readTemperature());
+  Serial.print(" C | Pression: ");
+  Serial.print(bme.readPressure() / 100.0F);
+  Serial.print(" hPa | Humidite: ");
+  Serial.print(bme.readHumidity());
+  Serial.print(" % | Altitude: ");
+  Serial.println(bme.readAltitude(1013.25));
+
+  delay(2000);
 }

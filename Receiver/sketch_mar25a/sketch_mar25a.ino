@@ -10,7 +10,7 @@
 #define LORA_FIX_LENGTH_PAYLOAD_ON  false
 #define LORA_IQ_INVERSION_ON        false
 
-#define BUFFER_SIZE 64
+#define BUFFER_SIZE 128
 
 char rxpacket[BUFFER_SIZE];
 static RadioEvents_t RadioEvents;
@@ -23,29 +23,26 @@ void OnRxDone(uint8_t *payload, uint16_t size, int16_t rssi, int8_t snr);
 
 void setup() {
   Serial.begin(115200);
-  delay(2000);
-  Serial.println("setup");
+  delay(3000);
+  Serial.println("Inicio receiver");
 
   Mcu.begin(HELTEC_BOARD, SLOW_CLK_TPYE);
-  Serial.println("mcu ok");
 
   RadioEvents.RxDone = OnRxDone;
   Radio.Init(&RadioEvents);
-  Serial.println("radio init ok");
-
   Radio.SetChannel(RF_FREQUENCY);
-  Serial.println("channel ok");
 
   Radio.SetRxConfig(MODEM_LORA, LORA_BANDWIDTH, LORA_SPREADING_FACTOR,
                     LORA_CODINGRATE, 0, LORA_PREAMBLE_LENGTH,
                     LORA_SYMBOL_TIMEOUT, LORA_FIX_LENGTH_PAYLOAD_ON,
-                    0, true, 0, 0, LORA_IQ_INVERSION_ON, true);
-  Serial.println("rx config ok");
+                    0, true, 0, 0, LORA_IQ_INVERSION_ON, false);
+
+  Serial.println("Receiver listo");
 }
 
 void loop() {
   if (lora_idle) {
-    Serial.println("into RX mode");
+    Serial.println("Esperando paquete...");
     lora_idle = false;
     Radio.Rx(0);
   }
@@ -63,7 +60,7 @@ void OnRxDone(uint8_t *payload, uint16_t size, int16_t rssi, int8_t snr) {
   memcpy(rxpacket, payload, size);
   rxpacket[size] = '\0';
 
-  Serial.printf("received: %s | RSSI: %d | size: %d\n", rxpacket, packetRssi, rxSize);
+  Serial.printf("Recibido: %s | RSSI: %d | size: %d\n", rxpacket, packetRssi, rxSize);
 
   lora_idle = true;
 }
