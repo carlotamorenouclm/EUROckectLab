@@ -125,9 +125,11 @@ flight_logs.csv
 ## 👥 Team
 Celestial Horizons (Group 5)
 
-- Sophie Adenot  
-- Raphaël Liégeois  
-- Pablo Álvarez Fernández  
+- Carlota Moreno   🇪🇸
+- Sohail Bennani   🇱🇺
+- Ange Bonkoski    🇫🇷
+- Seynabou Sine    🇫🇷
+- Bayiha Dieudonné 🇫🇷
 
 ---
 
