@@ -8,7 +8,8 @@ const translations = {
         phaseIdle: "Sur le pas de tir", phaseLaunch: "DÉCOLLAGE 🚀", phaseCoast: "Chute libre ascendante", phaseApogee: "APOGÉE ATTEINT 🎯", phaseDescent: "Descente sous parachute 🪂",
         audioEnable: "Activer Audio", audioDisable: "Couper Audio",
         voiceLiftoff: "Décollage détecté. Propulsion nominale.", voiceApogee: "Apogée atteint. Préparation du parachute.", voiceDescent: "Descente en cours.",
-        erasmusTitle: "À propos du Projet Erasmus+ BIP", erasmusIntro: "Bienvenue sur la station sol du projet EU Rocket Lab, un programme Erasmus+ Blended Intensive Programme (BIP) 2026. Ce projet unique réunit des étudiants et des enseignants issus de plusieurs pays européens autour d'un défi d'ingénierie spatiale concret : concevoir, fabriquer et faire décoller une fusée expérimentale.", erasmusContext: "Au-delà de l'acquisition de compétences techniques en électronique (IoT, LoRa), en programmation C++ (Arduino/ESP32) et en analyses de données barométriques et inertielles (BME280/MPU-9250), ce BIP favorise l'échange interculturel, la collaboration internationale et l'esprit critique. Il prépare la prochaine génération d'ingénieurs à travailler dans un environnement collaboratif européen.", timelineTitle: "Timeline du Projet"
+        erasmusTitle: "À propos du Projet Erasmus+ BIP", erasmusIntro: "Bienvenue sur la station sol du projet EU Rocket Lab, un programme Erasmus+ Blended Intensive Programme (BIP) 2026. Ce projet unique réunit des étudiants et des enseignants issus de plusieurs pays européens autour d'un défi d'ingénierie spatiale concret : concevoir, fabriquer et faire décoller une fusée expérimentale.", erasmusContext: "Au-delà de l'acquisition de compétences techniques en électronique (IoT, LoRa), en programmation C++ (Arduino/ESP32) et en analyses de données barométriques et inertielles (BME280/MPU-9250), ce BIP favorise l'échange interculturel, la collaboration internationale et l'esprit critique. Il prépare la prochaine génération d'ingénieurs à travailler dans un environnement collaboratif européen.", timelineTitle: "Timeline du Projet",
+        timeFeb: "Février 2026", timeFebDesc: "Phase Virtuelle - Architecture logicielle et simulation.", timeMar: "Mars 2026", timeMarDesc: "Phase Physique à l'École - Fabrication et tests I2C.", timeLaunch: "Vendredi Lancement !", timeLaunchDesc: "Vol inaugural de la fusée \"Erasmus Star\"."
     },
     en: { 
         subtitle: "Mission Control Center", connect: "Connect USB", disconnect: "Disconnect", mapTitle: "GPS Flight Tracking", altTitle: "Altitude (m)", accelTitle: "Acceleration (G)", tempTitle: "Temperature (°C)", pressTitle: "Pressure (hPa)", terminalTitle: "Raw Sensor Data (Serial Log)", csvDownload: "Download CSV",
@@ -16,15 +17,17 @@ const translations = {
         phaseIdle: "Standby on Pad", phaseLaunch: "LIFTOFF 🚀", phaseCoast: "Coasting ascent", phaseApogee: "APOGEE REACHED 🎯", phaseDescent: "Parachute descent 🪂",
         audioEnable: "Enable Audio", audioDisable: "Mute Audio",
         voiceLiftoff: "Liftoff detected. Propulsion nominal.", voiceApogee: "Apogee reached. Parachute deployment.", voiceDescent: "Descent nominal.",
-        erasmusTitle: "About the Erasmus+ BIP Project", erasmusIntro: "Welcome to the ground station of the EU Rocket Lab project, an Erasmus+ Blended Intensive Programme (BIP) 2026. This unique project brings together students and teachers from several European countries around a practical aerospace engineering challenge: designing, manufacturing, and launching an experimental rocket.", erasmusContext: "Beyond acquiring technical skills in electronics (IoT, LoRa), C++ programming (Arduino/ESP32), and barometric and inertial data analysis (BME280/MPU-9250), this BIP fosters intercultural exchange, international collaboration, and critical thinking. It prepares the next generation of engineers to work in a collaborative European environment.", timelineTitle: "Project Timeline"
+        erasmusTitle: "About the Erasmus+ BIP Project", erasmusIntro: "Welcome to the ground station of the EU Rocket Lab project, an Erasmus+ Blended Intensive Programme (BIP) 2026. This unique project brings together students and teachers from several European countries around a practical aerospace engineering challenge: designing, manufacturing, and launching an experimental rocket.", erasmusContext: "Beyond acquiring technical skills in electronics (IoT, LoRa), C++ programming (Arduino/ESP32), and barometric and inertial data analysis (BME280/MPU-9250), this BIP fosters intercultural exchange, international collaboration, and critical thinking. It prepares the next generation of engineers to work in a collaborative European environment.", timelineTitle: "Project Timeline",
+        timeFeb: "February 2026", timeFebDesc: "Virtual Phase - Software architecture and simulation.", timeMar: "March 2026", timeMarDesc: "Physical Phase at School - Manufacturing and I2C tests.", timeLaunch: "Friday Launch!", timeLaunchDesc: "Maiden flight of the \"Erasmus Star\" rocket."
     },
     es: { 
-        subtitle: "Mission Control Center", connect: "Conectar USB", disconnect: "Desconectar", mapTitle: "Seguimiento de Vuelo GPS", altTitle: "Altitud (m)", accelTitle: "Aceleración (G)", tempTitle: "Temperatura (°C)", pressTitle: "Presión (hPa)", terminalTitle: "Datos Crudos (Serial Log)", csvDownload: "Descargar CSV",
+        subtitle: "Mission Control Center", connect: "Conectar USB", disconnect: "Desconectar", mapTitle: "Seguimiento de Vuelo GPS", altTitle: "Altitud (m)", accelTitle: "Aceleración (G)", tempTitle: "Temperatura (°C)", pressTitle: "Presión (hPa)", terminalTitle: "Datos reales (Serial Log)", csvDownload: "Descargar CSV",
         speedTitle: "Velocidad Vertical", phaseTitle: "Fase de vuelo", apogeeTitle: "Apogeo (Max Alt)",
         phaseIdle: "En plataforma de lanzamiento", phaseLaunch: "DESPEGUE 🚀", phaseCoast: "Ascenso por inercia", phaseApogee: "APOGEO ALCANZADO 🎯", phaseDescent: "Descenso con paracaídas 🪂",
         audioEnable: "Activar Audio", audioDisable: "Silenciar Audio",
         voiceLiftoff: "Despegue detectado. Propulsión nominal.", voiceApogee: "Apogeo alcanzado.", voiceDescent: "Descenso nominal.",
-        erasmusTitle: "Sobre el Proyecto Erasmus+ BIP", erasmusIntro: "Bienvenido a la estación terrestre del proyecto EU Rocket Lab, un programa Erasmus+ Blended Intensive Programme (BIP) 2026. Este proyecto único reúne a estudiantes y profesores de varios países europeos en torno a un desafío concreto de ingeniería espacial: diseñar, fabricar y lanzar un cohete experimental.", erasmusContext: "Más allá de adquirir habilidades técnicas en electrónica (IoT, LoRa), programación C++ (Arduino/ESP32) y análisis de datos barométricos e inerciales (BME280/MPU-9250), este BIP fomenta el intercambio intercultural, la colaboración internacional y el espíritu crítico. Prepara a la próxima generación de ingenieros para trabajar en un entorno europeo colaborativo.", timelineTitle: "Línea de Tiempo del Proyecto"
+        erasmusTitle: "Sobre el Proyecto Erasmus+ BIP", erasmusIntro: "Bienvenido a la estación terrestre del proyecto EU Rocket Lab, un programa Erasmus+ Blended Intensive Programme (BIP) 2026. Este proyecto único reúne a estudiantes y profesores de varios países europeos en torno a un desafío concreto de ingeniería espacial: diseñar, fabricar y lanzar un cohete experimental.", erasmusContext: "Más allá de adquirir habilidades técnicas en electrónica (IoT, LoRa), programación C++ (Arduino/ESP32) y análisis de datos barométricos e inerciales (BME280/MPU-9250), este BIP fomenta el intercambio intercultural, la colaboración internacional y el espíritu crítico. Prepara a la próxima generación de ingenieros para trabajar en un entorno europeo colaborativo.", timelineTitle: "Línea de Tiempo del Proyecto",
+        timeFeb: "Febrero 2026", timeFebDesc: "Fase Virtual - Arquitectura de software y simulación.", timeMar: "Marzo 2026", timeMarDesc: "Fase Física en la Escuela - Fabricación y pruebas I2C.", timeLaunch: "¡Viernes de Lanzamiento!", timeLaunchDesc: "Vuelo inaugural del cohete \"Erasmus Star\"."
     },
     lu: { 
         subtitle: "Mission Control Center", connect: "Antenn verbannen", disconnect: "Trennen", mapTitle: "GPS Verfollegung", altTitle: "Héicht (m)", accelTitle: "Beschleunegung (G)", tempTitle: "Temperatur (°C)", pressTitle: "Drock (hPa)", terminalTitle: "Réi Daten (Serial Log)", csvDownload: "CSV eroflueden",
@@ -32,7 +35,8 @@ const translations = {
         phaseIdle: "Startbereet", phaseLaunch: "START 🚀", phaseCoast: "Steigfluch ouni Undriff", phaseApogee: "APOGEUM ERREESCHT 🎯", phaseDescent: "Fallschierm-Descente 🪂",
         audioEnable: "Audio un", audioDisable: "Audio aus",
         voiceLiftoff: "Start detektéiert.", voiceApogee: "Apogeum erreescht.", voiceDescent: "Descente ufänkt.",
-        erasmusTitle: "Iwwer den Erasmus+ BIP Projet", erasmusIntro: "Wëllkomm op der Buedemstatioun vum Projet EU Rocket Lab, engem Erasmus+ Blended Intensive Programme (BIP) 2026. Dësen eenzegaartege Projet bréngt Studenten an Enseignanten aus verschiddenen europäesche Länner ronderëm en konkreten Weltraum-Ingenieur-Challenge zesummen: concevéieren, fabrizéieren an en experimentell Rakéit start loossen.", erasmusContext: "Niewent dem Acquérir vun technesche Kompetenzen an der Elektronik (IoT, LoRa), der C++ Programméierung (Arduino/ESP32) an der Analyse vun barometresche an inertiale Donnéeën (BME280/MPU-9250), fördert dësen BIP den interkulturellen Austausch, d'international Zesummenaarbecht an de kritesche Geescht. Hien preparéiert déi nächst Generatioun vun Ingenieuren op d'Aarbecht an engem kollaborativen europäeschen Emfeld.", timelineTitle: "Timeline vum Projet"
+        erasmusTitle: "Iwwer den Erasmus+ BIP Projet", erasmusIntro: "Wëllkomm op der Buedemstatioun vum Projet EU Rocket Lab, engem Erasmus+ Blended Intensive Programme (BIP) 2026. Dësen eenzegaartege Projet bréngt Studenten an Enseignanten aus verschiddenen europäesche Länner ronderëm en konkreten Weltraum-Ingenieur-Challenge zesummen: concevéieren, fabrizéieren an en experimentell Rakéit start loossen.", erasmusContext: "Niewent dem Acquérir vun technesche Kompetenzen an der Elektronik (IoT, LoRa), der C++ Programméierung (Arduino/ESP32) an der Analyse vun barometresche an inertiale Donnéeën (BME280/MPU-9250), fördert dësen BIP den interkulturellen Austausch, d'international Zesummenaarbecht an de kritesche Geescht. Hien preparéiert déi nächst Generatioun vun Ingenieuren op d'Aarbecht an engem kollaborativen europäeschen Emfeld.", timelineTitle: "Timeline vum Projet",
+        timeFeb: "Februar 2026", timeFebDesc: "Virtuell Phas - Software-Architektur an Simulatioun.", timeMar: "Mäerz 2026", timeMarDesc: "Physikalesch Phas an der Schoul - Fabrikatioun an I2C Tester.", timeLaunch: "Freideg Start!", timeLaunchDesc: "Éischte Fluch vun der Rakéit \"Erasmus Star\"."
     }
 };
 
@@ -42,19 +46,22 @@ let isConnected = false;
 document.getElementById('langSelector').addEventListener('change', (e) => {
     currentLang = e.target.value;
     document.getElementById('langDisplay').innerText = currentLang.toUpperCase();
+
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
         if (key === 'connect') {
-            el.innerText = isConnected ? translations[currentLang].disconnect : translations[currentLang].connect;
+            // ICI : On remplace innerText par innerHTML
+            el.innerHTML = isConnected ? translations[currentLang].disconnect : translations[currentLang].connect;
         } else if (key === 'phaseIdle' || key === 'phaseLaunch' || key === 'phaseCoast' || key === 'phaseApogee' || key === 'phaseDescent') {
-            // Ne pas forcer la traduction du statut de vol avec un bouton, ça se gère dynamiquement.
+            // On ne fait rien ici
         } else if (key === 'audioEnable') {
-            el.innerText = audioEnabled ? translations[currentLang].audioDisable : translations[currentLang].audioEnable;
+            // ICI : On remplace innerText par innerHTML
+            el.innerHTML = audioEnabled ? translations[currentLang].audioDisable : translations[currentLang].audioEnable;
         } else {
-            el.innerText = translations[currentLang][key];
+            // ET SURTOUT ICI : On remplace innerText par innerHTML
+            el.innerHTML = translations[currentLang][key];
         }
     });
-    // Forcer la mise à jour de la bannière d'état
     updateFlightPhaseUI();
 });
 
