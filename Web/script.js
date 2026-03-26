@@ -3,39 +3,39 @@
 // ==========================================
 const translations = {
     fr: { 
-        subtitle: "Mission Control Center", connect: "Connecter USB", disconnect: "Déconnecter", mapTitle: "Suivi de Vol GPS", altTitle: "Altitude (m)", accelTitle: "Accélération (G)", tempTitle: "Température (°C)", pressTitle: "Pression (hPa)", terminalTitle: "Données Brutes du Capteur (Serial Log)", csvDownload: "Télécharger CSV",
+        subtitle: "Mission Control Center", connect: "Connecter USB", disconnect: "Déconnecter", mapTitle: "Suivi de Vol GPS", altTitle: "Altitude (m)", accelTitle: "Accélération (G)", tempTitle: "Température (°C)", pressTitle: "Pression (hPa)", humTitle: "Humidité (%)", terminalTitle: "Données Brutes du Capteur (Serial Log)", csvDownload: "Télécharger CSV",
         speedTitle: "Vitesse Verticale", phaseTitle: "Phase de vol", apogeeTitle: "Apogée (Max Alt)",
         phaseIdle: "Sur le pas de tir", phaseLaunch: "DÉCOLLAGE 🚀", phaseCoast: "Chute libre ascendante", phaseApogee: "APOGÉE ATTEINT 🎯", phaseDescent: "Descente sous parachute 🪂",
         audioEnable: "Activer Audio", audioDisable: "Couper Audio",
         voiceLiftoff: "Décollage détecté. Propulsion nominale.", voiceApogee: "Apogée atteint. Préparation du parachute.", voiceDescent: "Descente en cours.",
-        erasmusTitle: "À propos du Projet Erasmus+ BIP", erasmusIntro: "Bienvenue sur la station sol du projet EU Rocket Lab, un programme Erasmus+ Blended Intensive Programme (BIP) 2026. Ce projet unique réunit des étudiants et des enseignants issus de plusieurs pays européens autour d'un défi d'ingénierie spatiale concret : concevoir, fabriquer et faire décoller une fusée expérimentale.", erasmusContext: "Au-delà de l'acquisition de compétences techniques en électronique (IoT, LoRa), en programmation C++ (Arduino/ESP32) et en analyses de données barométriques et inertielles (BME280/MPU-9250), ce BIP favorise l'échange interculturel, la collaboration internationale et l'esprit critique. Il prépare la prochaine génération d'ingénieurs à travailler dans un environnement collaboratif européen.", timelineTitle: "Timeline du Projet",
+        erasmusTitle: "À propos du Projet Erasmus+ BIP", erasmusIntro: "Bienvenue sur la station sol du projet <strong>EU Rocket Lab</strong>, un programme Erasmus+ Blended Intensive Programme (BIP) 2026. Ce projet unique réunit des étudiants et des enseignants issus de plusieurs pays européens autour d'un défi d'ingénierie spatiale concret : concevoir, fabriquer et faire décoller une fusée expérimentale.", erasmusContext: "Au-delà de l'acquisition de compétences techniques en électronique (IoT, LoRa), en programmation C++ (Arduino/ESP32) et en analyses de données barométriques et inertielles (BME280/MPU-9250), ce BIP favorise l'échange interculturel, la collaboration internationale et l'esprit critique. Il prépare la prochaine génération d'ingénieurs à travailler dans un environnement collaboratif européen.", timelineTitle: "Timeline du Projet",
         timeFeb: "Février 2026", timeFebDesc: "Phase Virtuelle - Architecture logicielle et simulation.", timeMar: "Mars 2026", timeMarDesc: "Phase Physique à l'École - Fabrication et tests I2C.", timeLaunch: "Vendredi Lancement !", timeLaunchDesc: "Vol inaugural de la fusée \"Erasmus Star\"."
     },
     en: { 
-        subtitle: "Mission Control Center", connect: "Connect USB", disconnect: "Disconnect", mapTitle: "GPS Flight Tracking", altTitle: "Altitude (m)", accelTitle: "Acceleration (G)", tempTitle: "Temperature (°C)", pressTitle: "Pressure (hPa)", terminalTitle: "Raw Sensor Data (Serial Log)", csvDownload: "Download CSV",
+        subtitle: "Mission Control Center", connect: "Connect USB", disconnect: "Disconnect", mapTitle: "GPS Flight Tracking", altTitle: "Altitude (m)", accelTitle: "Acceleration (G)", tempTitle: "Temperature (°C)", pressTitle: "Pressure (hPa)", humTitle: "Humidity (%)", terminalTitle: "Raw Sensor Data (Serial Log)", csvDownload: "Download CSV",
         speedTitle: "Vertical Speed", phaseTitle: "Flight Phase", apogeeTitle: "Apogee (Max Alt)",
         phaseIdle: "Standby on Pad", phaseLaunch: "LIFTOFF 🚀", phaseCoast: "Coasting ascent", phaseApogee: "APOGEE REACHED 🎯", phaseDescent: "Parachute descent 🪂",
         audioEnable: "Enable Audio", audioDisable: "Mute Audio",
         voiceLiftoff: "Liftoff detected. Propulsion nominal.", voiceApogee: "Apogee reached. Parachute deployment.", voiceDescent: "Descent nominal.",
-        erasmusTitle: "About the Erasmus+ BIP Project", erasmusIntro: "Welcome to the ground station of the EU Rocket Lab project, an Erasmus+ Blended Intensive Programme (BIP) 2026. This unique project brings together students and teachers from several European countries around a practical aerospace engineering challenge: designing, manufacturing, and launching an experimental rocket.", erasmusContext: "Beyond acquiring technical skills in electronics (IoT, LoRa), C++ programming (Arduino/ESP32), and barometric and inertial data analysis (BME280/MPU-9250), this BIP fosters intercultural exchange, international collaboration, and critical thinking. It prepares the next generation of engineers to work in a collaborative European environment.", timelineTitle: "Project Timeline",
+        erasmusTitle: "About the Erasmus+ BIP Project", erasmusIntro: "Welcome to the ground station of the <strong>EU Rocket Lab</strong> project, an Erasmus+ Blended Intensive Programme (BIP) 2026. This unique project brings together students and teachers from several European countries around a practical aerospace engineering challenge: designing, manufacturing, and launching an experimental rocket.", erasmusContext: "Beyond acquiring technical skills in electronics (IoT, LoRa), C++ programming (Arduino/ESP32), and barometric and inertial data analysis (BME280/MPU-9250), this BIP fosters intercultural exchange, international collaboration, and critical thinking. It prepares the next generation of engineers to work in a collaborative European environment.", timelineTitle: "Project Timeline",
         timeFeb: "February 2026", timeFebDesc: "Virtual Phase - Software architecture and simulation.", timeMar: "March 2026", timeMarDesc: "Physical Phase at School - Manufacturing and I2C tests.", timeLaunch: "Friday Launch!", timeLaunchDesc: "Maiden flight of the \"Erasmus Star\" rocket."
     },
     es: { 
-        subtitle: "Mission Control Center", connect: "Conectar USB", disconnect: "Desconectar", mapTitle: "Seguimiento de Vuelo GPS", altTitle: "Altitud (m)", accelTitle: "Aceleración (G)", tempTitle: "Temperatura (°C)", pressTitle: "Presión (hPa)", terminalTitle: "Datos reales (Serial Log)", csvDownload: "Descargar CSV",
+        subtitle: "Mission Control Center", connect: "Conectar USB", disconnect: "Desconectar", mapTitle: "Seguimiento de Vuelo GPS", altTitle: "Altitud (m)", accelTitle: "Aceleración (G)", tempTitle: "Temperatura (°C)", pressTitle: "Presión (hPa)", humTitle: "Humedad (%)", terminalTitle: "Datos reales (Serial Log)", csvDownload: "Descargar CSV",
         speedTitle: "Velocidad Vertical", phaseTitle: "Fase de vuelo", apogeeTitle: "Apogeo (Max Alt)",
         phaseIdle: "En plataforma de lanzamiento", phaseLaunch: "DESPEGUE 🚀", phaseCoast: "Ascenso por inercia", phaseApogee: "APOGEO ALCANZADO 🎯", phaseDescent: "Descenso con paracaídas 🪂",
         audioEnable: "Activar Audio", audioDisable: "Silenciar Audio",
         voiceLiftoff: "Despegue detectado. Propulsión nominal.", voiceApogee: "Apogeo alcanzado.", voiceDescent: "Descenso nominal.",
-        erasmusTitle: "Sobre el Proyecto Erasmus+ BIP", erasmusIntro: "Bienvenido a la estación terrestre del proyecto EU Rocket Lab, un programa Erasmus+ Blended Intensive Programme (BIP) 2026. Este proyecto único reúne a estudiantes y profesores de varios países europeos en torno a un desafío concreto de ingeniería espacial: diseñar, fabricar y lanzar un cohete experimental.", erasmusContext: "Más allá de adquirir habilidades técnicas en electrónica (IoT, LoRa), programación C++ (Arduino/ESP32) y análisis de datos barométricos e inerciales (BME280/MPU-9250), este BIP fomenta el intercambio intercultural, la colaboración internacional y el espíritu crítico. Prepara a la próxima generación de ingenieros para trabajar en un entorno europeo colaborativo.", timelineTitle: "Línea de Tiempo del Proyecto",
+        erasmusTitle: "Sobre el Proyecto Erasmus+ BIP", erasmusIntro: "Bienvenido a la estación terrestre del proyecto <strong>EU Rocket Lab</strong>, un programa Erasmus+ Blended Intensive Programme (BIP) 2026. Este proyecto único reúne a estudiantes y profesores de varios países europeos en torno a un desafío concreto de ingeniería espacial: diseñar, fabricar y lanzar un cohete experimental.", erasmusContext: "Más allá de adquirir habilidades técnicas en electrónica (IoT, LoRa), programación C++ (Arduino/ESP32) y análisis de datos barométricos e inerciales (BME280/MPU-9250), este BIP fomenta el intercambio intercultural, la colaboración internacional y el espíritu crítico. Prepara a la próxima generación de ingenieros para trabajar en un entorno europeo colaborativo.", timelineTitle: "Línea de Tiempo del Proyecto",
         timeFeb: "Febrero 2026", timeFebDesc: "Fase Virtual - Arquitectura de software y simulación.", timeMar: "Marzo 2026", timeMarDesc: "Fase Física en la Escuela - Fabricación y pruebas I2C.", timeLaunch: "¡Viernes de Lanzamiento!", timeLaunchDesc: "Vuelo inaugural del cohete \"Erasmus Star\"."
     },
     lu: { 
-        subtitle: "Mission Control Center", connect: "Antenn verbannen", disconnect: "Trennen", mapTitle: "GPS Verfollegung", altTitle: "Héicht (m)", accelTitle: "Beschleunegung (G)", tempTitle: "Temperatur (°C)", pressTitle: "Drock (hPa)", terminalTitle: "Réi Daten (Serial Log)", csvDownload: "CSV eroflueden",
+        subtitle: "Mission Control Center", connect: "Antenn verbannen", disconnect: "Trennen", mapTitle: "GPS Verfollegung", altTitle: "Héicht (m)", accelTitle: "Beschleunegung (G)", tempTitle: "Temperatur (°C)", pressTitle: "Drock (hPa)", humTitle: "Fiichtegkeet (%)", terminalTitle: "Réi Daten (Serial Log)", csvDownload: "CSV eroflueden",
         speedTitle: "Vertikal Vitess", phaseTitle: "Fluchphas", apogeeTitle: "Apogeum (Max Alt)",
         phaseIdle: "Startbereet", phaseLaunch: "START 🚀", phaseCoast: "Steigfluch ouni Undriff", phaseApogee: "APOGEUM ERREESCHT 🎯", phaseDescent: "Fallschierm-Descente 🪂",
         audioEnable: "Audio un", audioDisable: "Audio aus",
         voiceLiftoff: "Start detektéiert.", voiceApogee: "Apogeum erreescht.", voiceDescent: "Descente ufänkt.",
-        erasmusTitle: "Iwwer den Erasmus+ BIP Projet", erasmusIntro: "Wëllkomm op der Buedemstatioun vum Projet EU Rocket Lab, engem Erasmus+ Blended Intensive Programme (BIP) 2026. Dësen eenzegaartege Projet bréngt Studenten an Enseignanten aus verschiddenen europäesche Länner ronderëm en konkreten Weltraum-Ingenieur-Challenge zesummen: concevéieren, fabrizéieren an en experimentell Rakéit start loossen.", erasmusContext: "Niewent dem Acquérir vun technesche Kompetenzen an der Elektronik (IoT, LoRa), der C++ Programméierung (Arduino/ESP32) an der Analyse vun barometresche an inertiale Donnéeën (BME280/MPU-9250), fördert dësen BIP den interkulturellen Austausch, d'international Zesummenaarbecht an de kritesche Geescht. Hien preparéiert déi nächst Generatioun vun Ingenieuren op d'Aarbecht an engem kollaborativen europäeschen Emfeld.", timelineTitle: "Timeline vum Projet",
+        erasmusTitle: "Iwwer den Erasmus+ BIP Projet", erasmusIntro: "Wëllkomm op der Buedemstatioun vum Projet <strong>EU Rocket Lab</strong>, engem Erasmus+ Blended Intensive Programme (BIP) 2026. Dësen eenzegaartege Projet bréngt Studenten an Enseignanten aus verschiddenen europäesche Länner ronderëm en konkreten Weltraum-Ingenieur-Challenge zesummen: concevéieren, fabrizéieren an en experimentell Rakéit start loossen.", erasmusContext: "Niewent dem Acquérir vun technesche Kompetenzen an der Elektronik (IoT, LoRa), der C++ Programméierung (Arduino/ESP32) an der Analyse vun barometresche an inertiale Donnéeën (BME280/MPU-9250), fördert dësen BIP den interkulturellen Austausch, d'international Zesummenaarbecht an de kritesche Geescht. Hien preparéiert déi nächst Generatioun vun Ingenieuren op d'Aarbecht an engem kollaborativen europäeschen Emfeld.", timelineTitle: "Timeline vum Projet",
         timeFeb: "Februar 2026", timeFebDesc: "Virtuell Phas - Software-Architektur an Simulatioun.", timeMar: "Mäerz 2026", timeMarDesc: "Physikalesch Phas an der Schoul - Fabrikatioun an I2C Tester.", timeLaunch: "Freideg Start!", timeLaunchDesc: "Éischte Fluch vun der Rakéit \"Erasmus Star\"."
     }
 };
@@ -50,15 +50,12 @@ document.getElementById('langSelector').addEventListener('change', (e) => {
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
         if (key === 'connect') {
-            // ICI : On remplace innerText par innerHTML
             el.innerHTML = isConnected ? translations[currentLang].disconnect : translations[currentLang].connect;
         } else if (key === 'phaseIdle' || key === 'phaseLaunch' || key === 'phaseCoast' || key === 'phaseApogee' || key === 'phaseDescent') {
             // On ne fait rien ici
         } else if (key === 'audioEnable') {
-            // ICI : On remplace innerText par innerHTML
             el.innerHTML = audioEnabled ? translations[currentLang].audioDisable : translations[currentLang].audioEnable;
         } else {
-            // ET SURTOUT ICI : On remplace innerText par innerHTML
             el.innerHTML = translations[currentLang][key];
         }
     });
@@ -78,18 +75,14 @@ document.getElementById('audioBtn').addEventListener('click', () => {
     const span = btn.querySelector('span');
     
     if(audioEnabled) {
-        // Design Badge Activé (Vert)
         icon.classList.replace('fa-volume-xmark', 'fa-volume-high');
         icon.classList.replace('text-cyan-400', 'text-green-400');
         btn.classList.replace('border-cyan-500', 'border-green-500');
         btn.classList.replace('shadow-[0_0_15px_rgba(6,182,212,0.4)]', 'shadow-[0_0_15px_rgba(34,197,94,0.4)]');
         btn.classList.replace('hover:shadow-[0_0_25px_rgba(6,182,212,0.8)]', 'hover:shadow-[0_0_25px_rgba(34,197,94,0.8)]');
         span.innerText = "AUDIO ON";
-        
-        // Fait parler l'ordinateur pour confirmer
         speakText("Système audio activé");
     } else {
-        // Design Badge Désactivé (Cyan)
         icon.classList.replace('fa-volume-high', 'fa-volume-xmark');
         icon.classList.replace('text-green-400', 'text-cyan-400');
         btn.classList.replace('border-green-500', 'border-cyan-500');
@@ -101,19 +94,13 @@ document.getElementById('audioBtn').addEventListener('click', () => {
 
 function speakText(keyOrText, isTranslationKey = false) {
     if(!audioEnabled) return;
-    
-    // Annule la phrase précédente si la fusée parle trop vite
     synth.cancel(); 
-    
     let textToSpeak = isTranslationKey ? translations[currentLang][keyOrText] : keyOrText;
     let utterance = new SpeechSynthesisUtterance(textToSpeak);
-    
-    // Règle l'accent en fonction de la langue choisie
     if(currentLang === 'fr') utterance.lang = 'fr-FR';
     if(currentLang === 'en') utterance.lang = 'en-US';
     if(currentLang === 'es') utterance.lang = 'es-ES';
     if(currentLang === 'lu') utterance.lang = 'de-DE'; 
-    
     synth.speak(utterance);
 }
 
@@ -121,8 +108,8 @@ function speakText(keyOrText, isTranslationKey = false) {
 // ==========================================
 // 2. INITIALISATION DE LA CARTE GPS (Leaflet)
 // ==========================================
-const launchLat = 49.119445;
-const launchLon = 6.161268;
+const launchLat = 49.110320; // NOUVELLE LATITUDE
+const launchLon = 6.072202;  // NOUVELLE LONGITUDE
 
 let map = L.map('map').setView([launchLat, launchLon], 16); 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19 }).addTo(map);
@@ -156,6 +143,7 @@ const altChart = new Chart(document.getElementById('altChart'), createChartConfi
 const accelChart = new Chart(document.getElementById('accelChart'), createChartConfig('#f1c40f')); 
 const tempChart = new Chart(document.getElementById('tempChart'), createChartConfig('#e74c3c')); 
 const pressChart = new Chart(document.getElementById('pressChart'), createChartConfig('#2ecc71')); 
+const humChart = new Chart(document.getElementById('humChart'), createChartConfig('#8b5cf6')); // NOUVEAU GRAPHIQUE
 
 
 // ==========================================
@@ -164,31 +152,34 @@ const pressChart = new Chart(document.getElementById('pressChart'), createChartC
 let maxAltitude = 0;
 let lastAltitude = 0;
 let lastTimeMs = Date.now();
-let currentFlightPhase = 'IDLE'; // IDLE, LAUNCH, COAST, APOGEE, DESCENT
+let currentFlightPhase = 'IDLE'; 
 
 function updateFlightDynamics(currentAlt, currentAccel) {
     let now = Date.now();
     let deltaTimeSec = (now - lastTimeMs) / 1000.0;
     
-    // Calcul de la vitesse (Dérivée de l'altitude)
     let speed = 0;
     if (deltaTimeSec > 0) {
         speed = (currentAlt - lastAltitude) / deltaTimeSec;
     }
     document.getElementById('valSpeed').innerText = speed.toFixed(1);
 
-    // Mise à jour de l'Apogée
     if (currentAlt > maxAltitude) {
         maxAltitude = currentAlt;
         document.getElementById('valApogee').innerText = maxAltitude.toFixed(1);
     }
 
-    // MACHINE À ÉTATS (Détection automatique de la phase de vol)
+    let maxG = parseFloat(document.getElementById('valMaxG').innerText);
+    if (currentAccel > maxG) {
+        document.getElementById('valMaxG').innerText = currentAccel.toFixed(2);
+    }
+
     let previousPhase = currentFlightPhase;
 
-    if (currentFlightPhase === 'IDLE') {
-        if (currentAccel >= 1.5) currentFlightPhase = 'LAUNCH';
-    } 
+    if (currentAccel >= 1.5) {
+        currentFlightPhase = 'LAUNCH';
+        startMissionTimer(); 
+    }
     else if (currentFlightPhase === 'LAUNCH') {
         if (currentAccel < 1.5 && speed > 0) currentFlightPhase = 'COAST';
     } 
@@ -199,11 +190,8 @@ function updateFlightDynamics(currentAlt, currentAccel) {
         if (speed < -2.0) currentFlightPhase = 'DESCENT';
     }
 
-    // Si la phase a changé, on met à jour l'interface et la voix
     if (previousPhase !== currentFlightPhase) {
         updateFlightPhaseUI();
-        
-        // Annonces vocales automatiques
         if(currentFlightPhase === 'LAUNCH') speakText('voiceLiftoff', true);
         if(currentFlightPhase === 'APOGEE') speakText('voiceApogee', true);
         if(currentFlightPhase === 'DESCENT') speakText('voiceDescent', true);
@@ -217,8 +205,7 @@ function updateFlightPhaseUI() {
     const box = document.getElementById('flightPhaseBox');
     const text = document.getElementById('valPhase');
     
-    // Reset classes
-    box.className = "glass-panel p-4 rounded-xl flex flex-col items-center justify-center border-b-4 bg-slate-800/80 transition-all duration-500 text-center";
+    box.className = "glass-panel p-3 rounded-xl flex flex-col items-center justify-center border-b-4 bg-slate-800/80 transition-all duration-500 text-center col-span-2 md:col-span-4";
     
     if (currentFlightPhase === 'IDLE') {
         text.innerText = translations[currentLang].phaseIdle;
@@ -247,7 +234,9 @@ let port;
 let reader;
 let serialBuffer = "";
 const consoleDiv = document.getElementById('serialConsole');
-let flightDataLog = [["Heure", "Temperature_C", "Pression_hPa", "Altitude_m", "Acceleration_G", "Latitude", "Longitude", "Vitesse_m_s", "Phase"]];
+
+// NOUVEAU CSV : La colonne Humidité a été ajoutée
+let flightDataLog = [["Heure", "Temperature_C", "Pression_hPa", "Altitude_m", "Humidite_%", "Acceleration_G", "Latitude", "Longitude", "Vitesse_m_s", "Phase"]];
 
 function logTerminal(msg) {
     const div = document.createElement('div');
@@ -274,14 +263,13 @@ document.getElementById('connectBtn').addEventListener('click', async () => {
         await port.open({ baudRate: 115200 });
         isConnected = true;
         
-        // Reset flight dynamics on new connection
         maxAltitude = 0; document.getElementById('valApogee').innerText = "0.0";
         currentFlightPhase = 'IDLE'; updateFlightPhaseUI();
 
         document.getElementById('btnText').innerText = translations[currentLang].disconnect;
         connectBtn.classList.replace('bg-red-erasmus', 'bg-slate-700'); 
         document.getElementById('exportBtn').classList.remove('hidden'); 
-        logTerminal("CONNECTÉ. En attente de la télémesure...");
+        logTerminal("CONNECTÉ. En attente de la télémesure (Format: Temp,Press,Alt,Hum,Accel,Lat,Lon)...");
         readLoop();
     } catch (error) { logTerminal("Erreur USB."); }
 });
@@ -306,40 +294,65 @@ async function readLoop() {
 }
 
 function processData(line) {
-    logTerminal("> " + line);
-    const values = line.split(',');
-    
-    if (values.length >= 6) {
-        const temp = parseFloat(values[0]);
-        const press = parseFloat(values[1]);
-        const alt = parseFloat(values[2]);
-        const accel = parseFloat(values[3]);
-        const lat = parseFloat(values[4]);
-        const lon = parseFloat(values[5]);
+    // 1. On ignore le "bruit" visuel du moniteur série pour se concentrer sur la ligne de données
+    if (line.includes("RAW: ")) {
+        logTerminal("📡 " + line);
 
-        if (!isNaN(temp) && !isNaN(lat)) {
+        // 2. On découpe la phrase "RAW: ID:47,T:21.28..."
+        let dataPart = line.split("RAW: ")[1].trim(); // Récupère ce qu'il y a après "RAW: "
+        let pairs = dataPart.split(','); // Sépare chaque bloc avec les virgules
+
+        // 3. On crée un dictionnaire intelligent pour ranger chaque valeur avec son étiquette
+        let dict = {};
+        pairs.forEach(pair => {
+            let parts = pair.split(':'); // Sépare "T" et "21.28"
+            if (parts.length === 2) {
+                dict[parts[0]] = parseFloat(parts[1]);
+            }
+        });
+
+        // 4. Si la température et l'altitude existent, on met à jour l'interface
+        if (dict["T"] !== undefined && dict["ALT"] !== undefined) {
+            const temp = dict["T"];
+            const press = dict["P"];
+            const hum = dict["H"];
+            const alt = dict["ALT"];
+            // AT correspond à l'accélération totale (A_total) dans leur code
+            const accel = dict["AT"] !== undefined ? dict["AT"] : 1.0; 
+            
+            // Pas de GPS dans la trame actuelle de la fusée, on utilise le pas de tir
+            const lat = launchLat;
+            const lon = launchLon;
+
             const timeStr = new Date().toLocaleTimeString();
 
+            // Mise à jour des valeurs textuelles
             document.getElementById('liveAlt').innerText = alt.toFixed(1);
             document.getElementById('liveAccel').innerText = accel.toFixed(2);
             document.getElementById('liveTemp').innerText = temp.toFixed(1);
             document.getElementById('livePress').innerText = press.toFixed(0);
+            document.getElementById('liveHum').innerText = hum.toFixed(1);
 
+            // Mise à jour des graphiques
             updateChart(altChart, timeStr, alt);
             updateChart(accelChart, timeStr, accel);
             updateChart(tempChart, timeStr, temp);
             updateChart(pressChart, timeStr, press);
+            updateChart(humChart, timeStr, hum);
 
-            let newLatLng = new L.LatLng(lat, lon);
-            rocketMarker.setLatLng(newLatLng);
-            flightPath.addLatLng(newLatLng);
-            map.panTo(newLatLng); 
+            // Fait clignoter le voyant vert "LINK ACTIVE"
+            blinkSignal();
 
-            // Analyse l'altitude et l'accélération pour deviner la phase de vol
+            // Envoie à la Machine à États pour deviner la phase de vol
             updateFlightDynamics(alt, accel);
 
-            flightDataLog.push([timeStr, temp, press, alt, accel, lat, lon, document.getElementById('valSpeed').innerText, currentFlightPhase]);
+            // Sauvegarde pour le téléchargement CSV
+            flightDataLog.push([timeStr, temp, press, alt, hum, accel, lat, lon, document.getElementById('valSpeed').innerText, currentFlightPhase]);
         }
+    } 
+    // Optionnel : On peut aussi afficher la force du signal dans le terminal
+    else if (line.includes("Message received")) {
+        logTerminal(line.trim());
     }
 }
 
@@ -366,12 +379,76 @@ document.getElementById('exportBtn').addEventListener('click', () => {
 });
 
 // ==========================================
+// 🚀 OUTILS PRO : HORLOGE, MET, PLEIN ÉCRAN, VOYANT
+// ==========================================
+
+setInterval(() => {
+    const now = new Date();
+    document.getElementById('liveClock').innerText = "LOCAL " + now.toLocaleTimeString('fr-FR');
+}, 1000);
+
+document.getElementById('fullscreenBtn').addEventListener('click', () => {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+        document.getElementById('fullscreenIcon').classList.replace('fa-expand', 'fa-compress');
+    } else {
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+            document.getElementById('fullscreenIcon').classList.replace('fa-compress', 'fa-expand');
+        }
+    }
+});
+
+let missionStartTime = null;
+let metInterval = null;
+
+function startMissionTimer() {
+    if (missionStartTime !== null) return; 
+    missionStartTime = Date.now();
+    
+    metInterval = setInterval(() => {
+        let elapsedMs = Date.now() - missionStartTime;
+        let totalSeconds = Math.floor(elapsedMs / 1000);
+        let minutes = Math.floor(totalSeconds / 60);
+        let seconds = totalSeconds % 60;
+        
+        let minStr = minutes < 10 ? "0" + minutes : minutes;
+        let secStr = seconds < 10 ? "0" + seconds : seconds;
+        
+        document.getElementById('valMET').innerText = `T + ${minStr}:${secStr}`;
+        document.getElementById('valMET').classList.replace('text-green-400', 'text-white');
+    }, 1000);
+}
+
+let signalTimeout;
+function blinkSignal() {
+    const dot = document.getElementById('signalDot');
+    const txt = document.getElementById('signalText');
+    
+    dot.classList.replace('bg-red-500', 'bg-green-400');
+    dot.classList.replace('shadow-[0_0_10px_rgba(239,68,68,0.8)]', 'shadow-[0_0_10px_rgba(74,222,128,0.8)]');
+    txt.classList.replace('text-red-400', 'text-green-400');
+    txt.innerText = "LINK ACTIVE";
+    
+    clearTimeout(signalTimeout);
+    signalTimeout = setTimeout(() => {
+        dot.classList.replace('bg-green-400', 'bg-red-500');
+        dot.classList.replace('shadow-[0_0_10px_rgba(74,222,128,0.8)]', 'shadow-[0_0_10px_rgba(239,68,68,0.8)]');
+        txt.classList.replace('text-green-400', 'text-red-400');
+        txt.innerText = "NO SIGNAL";
+    }, 500);
+}
+
+// ==========================================
 // 🛠️ MODE SIMULATEUR RÉALISTE (Vol Parabolique Complet)
 // ==========================================
 function startSimulator() {
     let simTemp = 25.0; let simPress = 1013.2; let simAlt = 0.0;
-    let simAccel = 1.0; let simLat = 49.119445; let simLon = 6.161268;
-    let simTime = 0; // Compteur de secondes
+    let simHum = 50.0; 
+    let simAccel = 1.0; 
+    let simLat = 49.110320; // NOUVELLE LATITUDE ICI AUSSI
+    let simLon = 6.072202;  // NOUVELLE LONGITUDE ICI AUSSI
+    let simTime = 0;
 
     console.log("🚀 Lancement du simulateur de vol !");
     logTerminal("🛠️ MODE SIMULATEUR ACTIVÉ.");
@@ -380,41 +457,39 @@ function startSimulator() {
     setInterval(() => {
         simTime++;
 
-        // Script du vol :
         if (simTime < 5) {
-            // T=0 à 5 : Sur le pas de tir
             simAccel = 1.0 + (Math.random() * 0.1); 
         } 
         else if (simTime >= 5 && simTime < 10) {
-            // T=5 à 10 : DÉCOLLAGE (Propulsion puissante)
             simAccel = 3.5 + (Math.random() * 0.5); 
             simAlt += 45 + (Math.random() * 5); 
             simTemp -= 0.5;
+            simHum -= 0.8; // Plus on monte, plus l'air est sec
         } 
         else if (simTime >= 10 && simTime < 16) {
-            // T=10 à 16 : CHUTE LIBRE ASCENDANTE (Le moteur est coupé, mais on monte encore avec l'élan)
-            simAccel = 0.1 + (Math.random() * 0.2); // Proche de 0G
-            simAlt += 15 - (simTime - 10)*2; // La vitesse ascensionnelle ralentit
+            simAccel = 0.1 + (Math.random() * 0.2); 
+            simAlt += 15 - (simTime - 10)*2; 
             simTemp -= 0.2;
+            simHum -= 0.2;
         } 
         else if (simTime >= 16 && simAlt > 0) {
-            // T=16+ : DESCENTE SOUS PARACHUTE
-            simAccel = 1.0 + (Math.random() * 0.1); // On retrouve la gravité normale accroché au parachute
-            simAlt -= 10; // On descend doucement
-            simTemp += 0.2; // La température remonte
+            simAccel = 1.0 + (Math.random() * 0.1); 
+            simAlt -= 10; 
+            simTemp += 0.2; 
+            simHum += 0.4; // On retrouve de l'humidité en descendant
         }
 
-        // On évite d'aller sous la terre
         if(simAlt < 0) simAlt = 0;
+        if(simHum < 0) simHum = 0;
 
-        // Déplacement GPS très léger
         simLat += 0.00005; simLon += 0.00005; 
 
-        let fakeTrame = `${simTemp.toFixed(1)},${simPress.toFixed(1)},${simAlt.toFixed(1)},${simAccel.toFixed(2)},${simLat.toFixed(6)},${simLon.toFixed(6)}`;
+        // NOUVEAU : La fausse trame génère 7 valeurs (avec simHum au milieu)
+        let fakeTrame = `${simTemp.toFixed(1)},${simPress.toFixed(1)},${simAlt.toFixed(1)},${simHum.toFixed(1)},${simAccel.toFixed(2)},${simLat.toFixed(6)},${simLon.toFixed(6)}`;
         processData(fakeTrame);
 
     }, 1000);
 }
 
-// 👉 DÉCOMMENTE POUR ACTIVER LE SIMULATEUR
+// 👉 LE SIMULATEUR EST BIEN DÉSACTIVÉ POUR LE JOUR J :
 //startSimulator();

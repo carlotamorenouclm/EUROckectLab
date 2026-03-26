@@ -16,6 +16,7 @@ body {
     --yellow-erasmus: #f1c40f; 
     --blue-erasmus: #3498db; 
     --green-erasmus: #2ecc71; 
+    --purple-erasmus: #8b5cf6; /* NOUVEAU : Violet pour l'humidité */
 }
 
 /* Couleurs sur mesure */
@@ -23,19 +24,24 @@ body {
 .text-yellow-erasmus { color: var(--yellow-erasmus); }
 .text-blue-erasmus { color: var(--blue-erasmus); }
 .text-green-erasmus { color: var(--green-erasmus); }
+.text-purple-erasmus { color: var(--purple-erasmus); }
 
 .bg-red-erasmus { background-color: var(--red-erasmus); }
 .bg-yellow-erasmus { background-color: var(--yellow-erasmus); }
 .bg-blue-erasmus { background-color: var(--blue-erasmus); }
 .bg-green-erasmus { background-color: var(--green-erasmus); }
+.bg-purple-erasmus { background-color: var(--purple-erasmus); }
 
 .border-t-red-erasmus { border-color: var(--red-erasmus); }
 .border-t-yellow-erasmus { border-color: var(--yellow-erasmus); }
 .border-t-blue-erasmus { border-color: var(--blue-erasmus); }
 .border-t-green-erasmus { border-color: var(--green-erasmus); }
+.border-t-purple-erasmus { border-color: var(--purple-erasmus); }
 
 .border-l-blue-erasmus { border-color: var(--blue-erasmus); }
-.border-r-yellow-erasmus { border-color: var(--yellow-erasmus); }
+.border-l-red-erasmus { border-color: var(--red-erasmus); }
+.border-l-yellow-erasmus { border-color: var(--yellow-erasmus); }
+.border-l-green-erasmus { border-color: var(--green-erasmus); }
 
 /* Effet de verre (Glassmorphism) */
 .glass-panel { 
