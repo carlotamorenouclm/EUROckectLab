@@ -63,7 +63,7 @@ void OnTxDone(void) {
 // I2C scan
 // =====================
 void scanI2C() {
-  Serial.println("Escaneando I2C...");
+  Serial.println("Scanning I2C...");
   byte count = 0;
 
   for (byte addr = 1; addr < 127; addr++) {
@@ -71,7 +71,7 @@ void scanI2C() {
     byte error = I2CBUS.endTransmission();
 
     if (error == 0) {
-      Serial.print("Encontrado en 0x");
+      Serial.print("Find out in 0x");
       if (addr < 16) Serial.print("0");
       Serial.println(addr, HEX);
       count++;
@@ -80,9 +80,9 @@ void scanI2C() {
   }
 
   if (count == 0) {
-    Serial.println("No se encontro ningun dispositivo I2C");
+    Serial.println("Don´t find I2C");
   } else {
-    Serial.print("Total encontrados: ");
+    Serial.print("Total find out: ");
     Serial.println(count);
   }
   Serial.println("----------------------------------------");
@@ -119,7 +119,7 @@ int16_t readInt16(uint8_t reg) {
 }
 
 void calibrateGyro() {
-  Serial.println("Calibrando giroscopio... no muevas la placa");
+  Serial.println("Calibrating gyroscope... do not move the board");
   const int samples = 500;
   long gx_sum = 0, gy_sum = 0, gz_sum = 0;
 
@@ -134,7 +134,7 @@ void calibrateGyro() {
   gy_offset = gy_sum / (float)samples;
   gz_offset = gz_sum / (float)samples;
 
-  Serial.println("Offsets gyro calculados");
+  Serial.println("Offsets gyro calculated");
   Serial.println("----------------------------------------");
 }
 
@@ -157,12 +157,12 @@ bool initMPU() {
   int16_t az = readInt16(REG_ACCEL_XOUT_H + 4);
 
   if (ax != 0 || ay != 0 || az != 0) {
-    Serial.println("MPU inicializada en modo compatible");
+    Serial.println("MPU initialized in compatible mode");
     calibrateGyro();
     return true;
   }
 
-  Serial.println("MPU no detectada");
+  Serial.println("MPU not detected");
   return false;
 }
 
@@ -172,7 +172,7 @@ bool initMPU() {
 void setup() {
   Serial.begin(115200);
   delay(3000);
-  Serial.println("Inicio sender");
+  Serial.println("Start sender");
 
   Mcu.begin(HELTEC_BOARD, SLOW_CLK_TPYE);
 
@@ -182,13 +182,13 @@ void setup() {
   scanI2C();
 
   if (bme.begin(0x77, &I2CBUS)) {
-    Serial.println("BME280 OK en 0x77");
+    Serial.println("BME280 OK in 0x77");
     bmeOK = true;
   } else if (bme.begin(0x76, &I2CBUS)) {
-    Serial.println("BME280 OK en 0x76");
+    Serial.println("BME280 OK in 0x76");
     bmeOK = true;
   } else {
-    Serial.println("BME280 no detectado");
+    Serial.println("BME280 not detected");
     bmeOK = false;
   }
 
@@ -203,7 +203,7 @@ void setup() {
                     LORA_PREAMBLE_LENGTH, LORA_FIX_LENGTH_PAYLOAD_ON,
                     true, 0, 0, LORA_IQ_INVERSION_ON, 3000);
 
-  Serial.println("LoRa sender listo");
+  Serial.println("LoRa sender ready");
   Serial.println("----------------------------------------");
 }
 
